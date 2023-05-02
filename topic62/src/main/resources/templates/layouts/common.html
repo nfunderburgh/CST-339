@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="header">
+		<div align="center">
+			<h2> Welcome to my CST-339 Activity Application</h2>
+		</div>
+	
+		<div class="bs-example">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">GCU</a>
+				</div>
+				<div id="navbarCollapse" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="https://www.gcu.edu" target="_blank">Home</a></li>
+						<li><a href="https://lopeshops.gcu.edu" target="_blank">Shop</a></li>
+						<li><a href="https://news.gcu.edu" target="_blank">News and Events</a></li>
+						<li>
+					    	<form th:action="@{/logout}" method="post">
+					        	<input type="submit" value="Log Out"/>
+					        </form>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<h2 th:text="${title}">Default Message Text"</h2><br>
+		<img th:src="@{/images/gcu-logo.jpg}"><br/><br/>
+	
+		<div th:fragment="footer" style="position: fixed; left: 0; bottom: 0; width: 100%; text-align: center; background-color: #522398; color: white">
+			<h5>Copyright 2021 Grand Canyon University</h5>
+		</div>
+	</div>
+</body>
+</html>
